@@ -12,14 +12,16 @@ node2_replace = 'http://localhost:5001/replace_chain'
 
 
 def node1():
-  urllib.request.urlopen(node1_mine).read()
-  time.sleep(2)
-  urllib.request.urlopen(node1_replace).read()
+  for i in range(8):
+    urllib.request.urlopen(node1_mine).read()
+    time.sleep(2)
+    urllib.request.urlopen(node1_replace).read()
 
 
 def node2():
-  urllib.request.urlopen(node2_mine).read()
-  urllib.request.urlopen(node2_replace).read()
+  for i in range(8):
+    urllib.request.urlopen(node2_mine).read()
+    urllib.request.urlopen(node2_replace).read()
 
 if __name__ == '__main__':
   p1 = Process(target=node1)
