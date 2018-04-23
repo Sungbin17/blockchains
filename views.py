@@ -31,14 +31,14 @@ class Blockchain:
         return self.chain[-1]
     
     def proof_of_work(self, previous_nonce):
-        new_nonce = 10000
+        new_nonce = 0
         check_nonce = False
         while check_nonce is False:
             hash_operation = hashlib.sha256(str(new_nonce**2 - previous_nonce**2).encode()).hexdigest()
             if hash_operation[:3] == '000':
                 check_nonce = True
             else:
-                new_nonce += 1
+                new_nonce -= 1
                 print(new_nonce)
         return new_nonce
     
@@ -164,7 +164,7 @@ def run():
 
 
 
-app.run(host = '0.0.0.0', port = 5000)
+app.run(host = '0.0.0.0', port = 5001)
 
 
 
