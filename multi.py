@@ -21,6 +21,7 @@ def node1():
 def node2():
   for i in range(8):
     urllib.request.urlopen(node2_mine).read()
+    time.sleep(2)
     urllib.request.urlopen(node2_replace).read()
 
 if __name__ == '__main__':
