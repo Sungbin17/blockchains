@@ -38,7 +38,7 @@ class Blockchain:
             if hash_operation[:3] == '000':
                 check_nonce = True
             else:
-                new_nonce -= 1
+                new_nonce += 1
                 print(new_nonce)
         return new_nonce
     
@@ -165,3 +165,15 @@ def run():
 
 
 app.run(host = '0.0.0.0', port = 5000)
+
+
+
+
+
+
+
+
+
+
+
+
