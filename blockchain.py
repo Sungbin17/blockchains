@@ -5,6 +5,7 @@ from urllib.parse import urlparse
 from uuid import uuid4
 from multiprocessing import Process
 from flask import Flask, jsonify, request
+from node import *
 
 class BlockChain(object):
   def __init__(self):
