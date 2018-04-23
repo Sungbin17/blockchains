@@ -14,7 +14,6 @@ class Blockchain:
 
     def __init__(self):
         self.chain = []
-        self.transactions = []
         self.create_block(nonce = 1, previous_hash = '0')
         self.nodes = set()
     
@@ -107,8 +106,7 @@ def mine_block():
                 'index': block['index'],
                 'timestamp': block['timestamp'],
                 'nonce': block['nonce'],
-                'previous_hash': block['previous_hash'],
-                'transactions': block['transactions']}
+                'previous_hash': block['previous_hash']}
     return jsonify(response), 200
 
 
